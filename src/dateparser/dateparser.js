@@ -125,7 +125,7 @@ angular.module('ui.bootstrap.dateparser', [])
 
     if ( results && results.length ) {
       var fields, dt;
-      if (baseDate) {
+      if (baseDate && Object.prototype.toString.call(baseDate) === "[object Date]" && !isNaN(baseDate.getTime())) {
         fields = {
           year: baseDate.getFullYear(),
           month: baseDate.getMonth(),
